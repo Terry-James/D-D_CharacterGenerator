@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Character Sheet</title>
+    <meta name="author" content="Terry James">
+    <meta charset="utf-8">
+    <meta name="descrition" content="A random character generator for D&D">
+    <meta name="generator" content="html">
+    <meta name="keywords" content="D&D, roleplaying, boardgames">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="races.js"></script>
+    <script src="characterJS.js"></script>
+</head>
+
+<body>
+    <div id="characterSheet">
+        <div id="characterInfo">
+            <fieldset>
+                <legend> Character Info: </legend>
+                <form id="stat">
+                    <label for="characterName"> Character Name</label>
+                    <input type="text" name="characterName" placeholder="Enter character name.">
+                    <label for="class"> Class </label>
+                    <input type="text" name="characterClass" placeholder="Enter character class.">
+                    <label for="level"> Level </label>
+                    <input type="number" name="characterLevel" id="lvl">
+                    <label for="race"> Race </label>
+                    <select name="characterRace">
+                        <option value="default">Select a race</option>
+                        <option value="human"> Human </option>
+                        <option value="elf"> Elf </option>
+                        <option value="dwarf"> Dwarf </option>
+                        <option value="gnome"> Gnome </option>
+                    </select>
+                    <label for="background"> Background </label>
+                    <input type="text" name="characterBackground" placeholder="Enter background">
+                    <label for="alignment"> Alignment </label>
+                    <input type="text" name="characterAlignment" placeholder="Enter alignment">
+                    <label for="playerName"> Player Name </label>
+                    <input type="text" name="playerName" placeholder="Enter player name.">
+                    <label for="Exp"> Exp </label>
+                    <input type="text" name="characterExp" id="exp">
+                    <label for="faction"> Faction </label>
+                    <input type="text" name="characterFaction" placeholder="Enter faction">
+                </form>
+            </fieldset>
+        </div>
+        <div id="column1">
+            <fieldset>
+                <legend> Stats </legend>
+                <div class="container">
+                    <form>
+                        <ul>
+                            <li><label for="strength"> Strength </label>
+                                <input type="text" name="characterStrength" class="stats">
+                            </li>
+                            <li><label for="dexterity"> Dexterity </label>
+                                <input type="text" name="characterDexterity" class="stats">
+                            </li>
+                            <li><label for="constitution"> Constitution </label>
+                                <input type="text" name="characterConstitution" class="stats">
+                            </li>
+                            <li><label for="intelligence"> Intelligence </label>
+                                <input type="text" name="characterIntelligence" class="stats">
+                            </li>
+                            <li><label for="wisdom"> Wisdom </label>
+                                <input type="text" name="characterWisdom" class="stats">
+                            </li>
+                            <li><label for="charisma"> Charisma </label>
+                                <input type="text" name="characterCharisma" class="stats">
+                            </li>
+                            <li><input type="button" name="rollStat" id="rolldie" value="Roll Stats">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Passive Wisdom: </legend>
+                <form>
+                    <label for="passiveWisdom"> Passive Wisdom{Perception}</label>
+                    <input type="text" name="passiveWisdom">
+                </form>
+            </fieldset>
+            <fieldset>
+                <legend> Proficienies & Languages: </legend>
+                <form>
+                    <label for="Proficienies&Languages"> Proficienies & Languages</label>
+                    <input type="text" name="P&L">
+                </form>
+            </fieldset>
+        </div>
+
+        <div id="column2">
+            <fieldset>
+                <legend> Saving Throws: </legend>
+                <form>
+                    <div class="container">
+                        <ul>
+                            <li><label for="strength"> Strength </label>
+                                <input type="text" name="characterStrength" class="save"></li>
+                            <li><label for="dexterity"> Dexterity </label>
+                                <input type="text" name="characterDexterity" class="save"></li>
+                            <li><label for="constitution"> Constitution </label>
+                                <input type="text" name="characterConstitution" class="save"></li>
+                            <li><label for="intelligence"> Intelligence </label>
+                                <input type="text" name="characterIntelligence" class="save"></li>
+                            <li><label for="wisdom"> Wisdom </label>
+                                <input type="text" name="characterWisdom" class="save"></li>
+                            <li><label for="charisma"> Charisma </label>
+                                <input type="text" name="characterCharisma" class="save"></li>
+                        </ul>
+                </form>
+        </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Skills: </legend>
+            <div class="container">
+                <form>
+                    <ul>
+                        <li><label for="acrobatics"> Acrobatics{Dex} </label>
+                            <input type="text" name="characterAcrobatics" class="skill"></li>
+                        <li><label for="animalHandling"> Animal Handling{Wis} </label>
+                            <input type="text" name="characterAH" class="skill"></li>
+                        <li><label for="arcana"> Arcana{Int} </label>
+                            <input type="text" name="characterArcana" class="skill"></li>
+                        <li><label for="athletics"> Athletics{Str} </label>
+                            <input type="text" name="characterAthletics" class="skill"></li>
+                        <li><label for="deception"> Deception{Cha} </label>
+                            <input type="text" name="characterDeception" class="skill"></li>
+                        <li><label for="history"> History{Int} </label>
+                            <input type="text" name="characterHistory" class="skill"></li>
+                        <li><label for="insight"> Insight{Wis} </label>
+                            <input type="text" name="characterInsight" class="skill"></li>
+                        <li><label for="intimidation"> Intimidation{Cha} </label>
+                            <input type="text" name="characterIntimidation" class="skill"></li>
+                        <li><label for="investigation"> Investigation{Int} </label>
+                            <input type="text" name="characterInvestigation" class="skill"></li>
+                        <li><label for="medicine"> Medicine{Wis} </label>
+                            <input type="text" name="characterMedicine" class="skill"></li>
+                        <li><label for="nature"> Nature{Int} </label>
+                            <input type="text" name="characterNature" class="skill"></li>
+                        <li><label for="perception"> Perception{Wis} </label>
+                            <input type="text" name="characterPerception" class="skill"></li>
+                        <li><label for="performance"> Performance{Cha} </label>
+                            <input type="text" name="characterPerformance" class="skill"></li>
+                        <li><label for="persussion"> Persussion{Cha} </label>
+                            <input type="text" name="characterPersussion" class="skill"></li>
+                        <li><label for="religion"> Religion{Int} </label>
+                            <input type="text" name="characterReligion" class="skill"></li>
+                        <li><label for="sleightOfHand"> Sleight Of Hand{Dex} </label>
+                            <input type="text" name="characterSOH" class="skill"></li>
+                        <li><label for="stealth"> Stealth{Dex} </label>
+                            <input type="text" name="characterStealth" class="skill"></li>
+                        <li><label for="survival"> Survival{Wis} </label>
+                            <input type="text" name="characterSurvival" class="skill"></li>
+                    </ul>
+                </form>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="column3">
+        <fieldset>
+            <legend> Scores: </legend>
+            <div class="container">
+                <ul>
+                    <li><label for="AC"> Armor Class</label>
+                        <input type="text" name="characterAC" class="score">
+                    </li>
+                    <li><label for="initiative"> Initiative</label>
+                        <input type="text" name="characterInitiative" class="score">
+                    </li>
+                    <li><label for="speed"> Speed</label>
+                        <input type="text" name="characterSpeed" class="score">
+                    </li>
+                    <li><label for="currentHp"> Hit Points</label>
+                        <input type="text" name="characterHp" class="score">
+                    </li>
+                    <li><label for="hitdice"> Armor Class</label>
+                        <input type="text" name="characterHD" class="score">
+                    </li>
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+    </div>
+</body>
+
+</html>
